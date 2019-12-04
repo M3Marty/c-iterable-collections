@@ -75,12 +75,12 @@ struct iterator_str
 	void * meta;
 	void (*toBegin) (iterator it);
 	void (*toEnd) (iterator it);
+	void (*onDel) (iterator it);
 	void *(*prev) (iterator it);
 	void *(*next) (iterator it);
 	int (*hasNext) (iterator it);
 	int (*hasPrev) (iterator it);
 	int (*index) (iterator it);
-	int (*onDel) (iterator it);
 	int buf;
 };
 ```
