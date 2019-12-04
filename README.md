@@ -12,7 +12,7 @@ struct specific_collection
 };
 ```
 
-For get type in [collection.c](https://github.com/M3Marty/src/c-iterable-collections/collection.c) defined macros `type`
+For get type in [collection.c](https://github.com/M3Marty/src/c-iterable-collections/tree/master/src/collection.c) defined macros `type`
 that just cast collection pointer to uint32_t pointer and dereferencing one.
 ```C
 #define type(x) (* (uint32_t *) x)
@@ -46,7 +46,7 @@ collection * cclone(collection * src)
 
 ```
 
-This code uses new element of **cic** - [iteration.h](https://github.com/M3Marty/c-iterable-collections/include/cic/iteration.h).<br>
+This code uses new element of **cic** - [iteration.h](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/iteration.h).<br>
 That header defines new macroses what imitate `for-each` loops.
 ```C
 #define for_in(__collection, __x)
@@ -57,7 +57,7 @@ That header defines new macroses what imitate `for-each` loops.
 #define for_x_in_reversed(__collection)
 #define for_x_for(__it)
 ```
-In turn, they use [iterators](https://github.com/M3Marty/c-iterable-collections/include/cic/iterator.h).<br>
+In turn, they use [iterators](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/iterator.h).<br>
 
 > Also exists `cof` and `cgenerate` that creates new (default is array list) collection.
 > First requires: count of elements and _rest_, second: count of elements and generator-function.
@@ -86,7 +86,7 @@ struct iterator_str
 ```
 ## Extends `cclone`
 Besides `cclone` **cic** provides other default function for working with any collection provides standard API.
-### [Stream API](https://github.com/M3Marty/c-iterable-collections/include/cic/stream.h)
+### [Stream API](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/stream.h)
 Stream API is a **Java Stream API**-inspired part of **cic** and provides methods to handle any collection what is registered to **cic**.
 
 | Declaration | Desctiption |
@@ -178,7 +178,7 @@ long readInt()
 ```
 
 ## Default collections
-By default accessed [ArrayList](https://github.com/M3Marty/c-iterable-collections/include/cic/arraylist.h), [LinkedList](https://github.com/M3Marty/c-iterable-collections/include/cic/linkedlist.h), [HashSet](https://github.com/M3Marty/c-iterable-collections/include/cic/set.h) and [HashMap](https://github.com/M3Marty/c-iterable-collections/include/cic/map.h).
+By default accessed [ArrayList](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/arraylist.h), [LinkedList](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/linkedlist.h), [HashSet](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/set.h) and [HashMap](https://github.com/M3Marty/c-iterable-collections/tree/master/include/cic/map.h).
 Collections has name prefix. `al` for ArrayList, `ll` for LinkedList, `set` for HashSet, `hmp` for HashMap.
 That collection have self set of functions what not included to standatd API.
 
@@ -254,7 +254,7 @@ Iterator API used by **iteration.h**. For example impl of `for_in`, `for_in_reve
 ```
 
 Implementaition of iterator requires using clear functions. For this two fields are provided in iterator structure:
-`int buf` and `void * meta`. For example watch [ArrayList iterator](https://github.com/M3Marty/c-iterable-collections/src/arraylist.c). This iterator have not handlers `onDel` and `reversed`. That's cause iterator not blocking collection and default implementaition of `itreversed` works for it.
+`int buf` and `void * meta`. For example watch [ArrayList iterator](https://github.com/M3Marty/c-iterable-collections/tree/master/src/arraylist.c). This iterator have not handlers `onDel` and `reversed`. That's cause iterator not blocking collection and default implementaition of `itreversed` works for it.
 
 ## In end
 That's all what you need to use and contribute **cic**.
