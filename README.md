@@ -12,7 +12,7 @@ struct specific_collection
 };
 ```
 
-For get type in [collection.c](https://github.com/M3Marty/src/c-iterable-collections/tree/master/src/collection.c) defined macros `type`
+For get type in [collection.c](https://github.com/M3Marty/c-iterable-collections/blob/master/src/collection.c) defined macros `type`
 that just cast collection pointer to uint32_t pointer and dereferencing one.
 ```C
 #define type(x) (* (uint32_t *) x)
